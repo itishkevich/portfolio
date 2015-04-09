@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "normalize.css": "~3.0.3"
+  },
+  "devDependencies": {}
+}
