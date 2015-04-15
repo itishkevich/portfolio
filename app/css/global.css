@@ -1,11 +1,0 @@
-/* = Variables, Extends, Mixins================================================*/
-/* font family: fira */
-/* font family: proxima nova */
-/* bg and colors */
-/* media */
-/* mixins */
-/* extends */
-.list-reset {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
