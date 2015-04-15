@@ -3,7 +3,7 @@
 <!--[if IE]>  <html class="no-js ie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<title>Портфолио</title>
+	<title>Портфолио: Связаться со мной</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -38,14 +38,14 @@
 	<link rel="stylesheet" href="bower/normalize.css/normalize.css">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="css/styles.css">
+	<!-- endbuild -->
 
 	<!-- JS -->
 	<script src="js/vendor/modernizr.min.js"></script>
-
 </head>
 <body>
 	<!--[if lt IE 8]>
-		<p class="b-unhappy-browser">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<p class="b-unhappy-browser">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 
 	<!-- Base container: start -->
@@ -73,9 +73,9 @@
 						<!-- Navigation: start -->
 						<nav class="b-nav m-flyout">
 							<ul class="b-nav-list">
-								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow m-active" href="index.html">Обо мне</a></li>
+								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow" href="index.html">Обо мне</a></li>
 								<li class="b-nav-item"><a class="b-nav-link" href="projects.html">Мои работы</a></li>
-								<li class="b-nav-item"><a class="b-nav-link" href="contacts.html">Связаться со мной</a></li>
+								<li class="b-nav-item"><a class="b-nav-link m-active" href="contacts.html">Связаться со мной</a></li>
 							</ul>
 						</nav>
 						<!-- Navigation: end -->
@@ -89,79 +89,60 @@
 		<div class="b-content-container m-cfix">
 			<!-- Main content: start -->
 			<div class="b-content">
-				<!-- Main info: start -->
+				<!-- contact form: start -->
 				<section class="b-section m-cfix">
-					<h2 class="b-section-title">Основная информация</h2>
+					<h2 class="b-form-title">У вас интересный проект? Напишите мне</h2>
 					<div class="b-section-body">
-						<div class="b-avatar">
-							<img src="img/misc/irina.tishkevich.png" alt="Тишкевич Ирина" class="b-avatar-img" />
-						</div>
-						<ul class="b-profile-list">
-							<li class="b-profile-item">
-								<div class="b-profile-label">Меня зовут:</div>
-								<div class="b-profile-value">Тишкевич Ирина</div>
-							</li>
-							<li class="b-profile-item">
-								<div class="b-profile-label">Мой возраст:</div>
-								<div class="b-profile-value">28 лет</div>
-							</li>
-							<li class="b-profile-item">
-								<div class="b-profile-label">Мой город:</div>
-								<div class="b-profile-value">Минск, Беларусь</div>
-							</li>
-							<li class="b-profile-item">
-								<div class="b-profile-label">Моя специализация:</div>
-								<div class="b-profile-value">html-developer</div>
-							</li>
-							<li class="b-profile-item">
-								<div class="b-profile-label">Ключевые навыки:</div>
-									<div class="b-profile-value"><ul class="b-skill-list">
-										<li class="b-skill-item">html</li>
-										<li class="b-skill-item">css</li>
-										<li class="b-skill-item">javascript</li>
-										<li class="b-skill-item">gulp</li>
-										<li class="b-skill-item">git</li>
-									</ul>
+						<form class="b-form m-contacts-form">
+							<div class="b-form-line b-columns">
+								<div class="b-col m-w50">
+									<div class="b-form-label">Имя</div>
+									<div class="b-form-field" data-tip-error="Вы не ввели имя">
+										<input class="b-control b-input" type="text" name="name" placeholder="Как к Вам обращаться"/>
+									</div>
 								</div>
-							</li>
-						</ul>
+								<div class="b-col m-w50">
+									<div class="b-form-label">Email</div>
+									<div class="b-form-field m-error" data-tip-pos="right" data-tip-error="Вы не ввели Email">
+										<input class="b-control b-input" type="text" name="email" placeholder="Куда мне писать" />
+									</div>
+								</div>
+							</div>
+							<div class="b-form-line">
+								<div class="b-form-label">Сообщение</div>
+								<div class="b-form-field m-error" data-tip-error="Ваш вопрос">
+									<textarea class="b-control b-textarea" name="msg" id="" cols="30" rows="5" placeholder="Кратко в чем суть"></textarea>
+								</div>
+							</div>
+							<div class="b-form-line">
+								<div class="b-form-label m-small-font">Введите код, указанный на картинке</div>
+								<div class="b-columns m-mob">
+									<div class="b-col m-w50">
+										<div class="b-form-field">
+											<div class="b-capture b-control">
+												<img class="b-capture-img" src="img/form/capture.png" alt="capture"/>
+											</div>
+										</div>
+									</div>
+									<div class="b-col m-w50">
+										<div class="b-form-field" data-tip-pos="right"  data-tip-error="Вы не ввели код">
+											<input class="b-control b-input m-input-small" type="text" name="capture_value" placeholder="Введите код" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="b-btn-holder b-columns m-mob">
+								<div class="b-col m-w50">
+									<input type="submit" class="b-btn" value="Отправить"/>
+								</div>
+								<div class="b-col m-w50 m-right">
+									<input type="reset" class="b-btn m-neg" value="Очистить"/>
+								</div>
+							</div>
+						</form>
 					</div>
 				</section>
-				<!-- Main info: end -->
-				<!-- Experience: start -->
-				<section class="b-section m-cfix">
-					<h2 class="b-section-title">Опыт работы</h2>
-					<div class="b-section-body">
-						<ul class="b-education-list">
-							<li class="b-education-item b-icon-education m-case">
-								<div class="b-education-descr">"Viaden" - Senior HTML5 Developer</div>
-								<div class="b-education-date">Aпрель 2014 - по настоящее время</div>
-							</li>
-							<li class="b-education-item b-icon-education m-case">
-								<div class="b-education-descr">"VRP Consulting" - UI Developer</div>
-								<div class="b-education-date">Июль 2009 - Aпрель 2014</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<!-- Experience: end -->
-				<!-- Education: start -->
-				<section class="b-section m-cfix">
-					<h2 class="b-section-title">Образование</h2>
-					<div class="b-section-body">
-						<ul class="b-education-list">
-							<li class="b-education-item b-icon-education m-learn">
-								<div class="b-education-descr">Высшее, БГУИР</div>
-								<div class="b-education-date">2004 - 2009</div>
-							</li>
-							<li class="b-education-item b-icon-education m-list">
-								<div class="b-education-descr">Курсы Loftschool.ru</div>
-								<div class="b-education-date">Март 2015 - по настоящее время</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<!-- Education: end -->
+				<!-- contact form: end -->
 			</div>
 			<!-- Main content: end -->
 			<!-- Sidebar: start -->
@@ -169,9 +150,9 @@
 				<!-- Navigation: start -->
 				<nav class="b-nav">
 					<ul class="b-nav-list">
-						<li class="b-nav-item"><a class="b-nav-link m-active" href="index.html">Обо мне</a></li>
+						<li class="b-nav-item"><a class="b-nav-link" href="index.html">Обо мне</a></li>
 						<li class="b-nav-item"><a class="b-nav-link" href="projects.html">Мои работы</a></li>
-						<li class="b-nav-item"><a class="b-nav-link" href="contacts.html">Связаться со мной</a></li>
+						<li class="b-nav-item"><a class="b-nav-link m-active" href="contacts.html">Связаться со мной</a></li>
 					</ul>
 				</nav>
 				<!-- Navigation: end -->
