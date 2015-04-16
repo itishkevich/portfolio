@@ -89,33 +89,36 @@
 		<div class="b-content-container m-cfix">
 			<!-- Main content: start -->
 			<div class="b-content">
-				<!-- contact form: start -->
+				<!-- Contact form: start -->
 				<section class="b-section m-cfix">
 					<h2 class="b-form-title">У вас интересный проект? Напишите мне</h2>
-					<div class="b-section-body">
+					<div class="b-form-body">
 						<form class="b-form m-contacts-form">
 							<div class="b-form-line b-columns">
 								<div class="b-col m-w50">
 									<div class="b-form-label">Имя</div>
-									<div class="b-form-field" data-tip-error="Вы не ввели имя">
+									<div class="b-form-field">
+										<span class="b-form-tip">Вы не ввели имя</span>
 										<input class="b-control b-input" type="text" name="name" placeholder="Как к Вам обращаться"/>
 									</div>
 								</div>
 								<div class="b-col m-w50">
 									<div class="b-form-label">Email</div>
-									<div class="b-form-field m-error" data-tip-pos="right" data-tip-error="Вы не ввели Email">
+									<div class="b-form-field m-error">
+										<span class="b-form-tip m-right-tip">Вы не ввели Email</span>
 										<input class="b-control b-input" type="text" name="email" placeholder="Куда мне писать" />
 									</div>
 								</div>
 							</div>
 							<div class="b-form-line">
 								<div class="b-form-label">Сообщение</div>
-								<div class="b-form-field m-error" data-tip-error="Ваш вопрос">
+								<div class="b-form-field m-error">
+									<span class="b-form-tip">Ваш вопрос</span>
 									<textarea class="b-control b-textarea" name="msg" id="" cols="30" rows="5" placeholder="Кратко в чем суть"></textarea>
 								</div>
 							</div>
 							<div class="b-form-line">
-								<div class="b-form-label m-small-font">Введите код, указанный на картинке</div>
+								<div class="b-form-label m-small-label">Введите код, указанный на картинке</div>
 								<div class="b-columns m-mob">
 									<div class="b-col m-w50">
 										<div class="b-form-field">
@@ -125,8 +128,9 @@
 										</div>
 									</div>
 									<div class="b-col m-w50">
-										<div class="b-form-field" data-tip-pos="right"  data-tip-error="Вы не ввели код">
-											<input class="b-control b-input m-input-small" type="text" name="capture_value" placeholder="Введите код" />
+										<div class="b-form-field">
+											<span class="b-form-tip m-right-tip">Вы не ввели код</span>
+											<input class="b-control b-input m-small-input" type="text" name="capture_value" placeholder="Введите код" />
 										</div>
 									</div>
 								</div>
@@ -142,7 +146,7 @@
 						</form>
 					</div>
 				</section>
-				<!-- contact form: end -->
+				<!-- Contact form: end -->
 			</div>
 			<!-- Main content: end -->
 			<!-- Sidebar: start -->
@@ -180,8 +184,9 @@
 			<li class="b-social-item"><a class="b-icon-social m-github" href="#">github</a></li>
 		</ul>
 		<!-- Social icons: end -->
+		<div class="b-footer-push"></div>
 	</div>
-	<!-- Base container: start -->
+	<!-- Base container: end -->
 	<!-- Footer: start -->
 	<div class="l-footer">
 		<footer class="b-footer">
@@ -198,12 +203,13 @@
 	<script src="bower/jquery/dist/jquery.min.js"></script>
 	<!-- endbuild -->
 
-	<script src="js/main.js"></script>
-
 	<!--[if IE 8]>
 	<script src="js/vendor/selectivizr.min.js"></script>
 	<script src="js/vendor/respond.min.js"></script>
 	<![endif]-->
+
+	<script src="js/main.js"></script>
+
 	<!-- JS: end -->
 </body>
 </html>

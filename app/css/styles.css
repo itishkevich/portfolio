@@ -92,14 +92,7 @@ p {
 /* main container */
 .h-base-container {
   min-height: 100%;
-  padding-bottom: 37px;
   overflow: hidden; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .h-base-container {
-      padding-bottom: 54px; } }
-  @media (min-width: 1024px) {
-    .h-base-container {
-      padding-bottom: 81px; } }
 
 /* = Header================================================*/
 .l-header {
@@ -187,6 +180,15 @@ p {
       vertical-align: middle;
       height: 100%;
       width: 0; } }
+
+.b-footer-push {
+  height: 37px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-footer-push {
+      height: 54px; } }
+  @media (min-width: 1024px) {
+    .b-footer-push {
+      height: 81px; } }
 
 /* footer: login */
 .b-footer-login {
@@ -288,7 +290,7 @@ p {
   padding: 10px; }
   @media (min-width: 768px) {
     .b-section-body {
-      padding: 20px 20px 20px; } }
+      padding: 20px; } }
 
 /* = Navigation================================================*/
 .b-nav {
@@ -1113,18 +1115,6 @@ p {
   padding: 0; }
 
 /* = Form elements================================================*/
-.m-contacts-form {
-  max-width: 95%;
-  margin: 7px auto; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .m-contacts-form {
-      max-width: 455px;
-      margin: 40px auto; } }
-  @media (min-width: 1024px) {
-    .m-contacts-form {
-      max-width: 402px;
-      margin: 26px auto; } }
-
 /* form title */
 .b-form-title {
   font: 1.1875em/1.25 'fira_sansbook';
@@ -1146,9 +1136,34 @@ p {
       padding: 42px 15px;
       border-bottom-width: 17px; } }
 
+.b-form-title.m-big-font {
+  font: 1.5em/1.4 'fira_sansbook';
+  padding: 11px 10px;
+  border-bottom: 9px solid #67dffa; }
+  @media (min-width: 768px) {
+    .b-form-title.m-big-font {
+      font-size: 2.5em;
+      padding: 17px 15px;
+      border-bottom-width: 15px; } }
+
+/* form body */
+.b-form-body {
+  background: #eff3f7;
+  border-radius: 4px;
+  padding: 10px; }
+  @media (min-width: 768px) {
+    .b-form-body {
+      padding: 20px; } }
+
 /* form: lines */
 .b-form-line {
   margin-bottom: 15px; }
+
+.b-form-line.m-spaced {
+  margin-bottom: 13px; }
+  @media (min-width: 768px) {
+    .b-form-line.m-spaced {
+      margin-bottom: 20px; } }
 
 /* form: labels */
 .b-form-label {
@@ -1163,19 +1178,33 @@ p {
       color: #959aa8;
       font-size: 1.1875em; } }
 
-.b-form-label.m-small-font {
+.b-form-label.m-small-label {
   font-size: 0.9375em;
   margin-bottom: 4px; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .b-form-label.m-small-font {
+    .b-form-label.m-small-label {
       font-size: 1.125em; } }
   @media (min-width: 1024px) {
-    .b-form-label.m-small-font {
+    .b-form-label.m-small-label {
       font-size: 1.0625em; } }
+
+.b-form-label.m-big-label {
+  font: 1.3125em/1.2 'fira_sanslight';
+  color: #58697a;
+  margin-bottom: 2px; }
+  @media (min-width: 768px) {
+    .b-form-label.m-big-label {
+      color: #959aa8;
+      font-size: 2.25em;
+      margin-bottom: 6px; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-form-label.m-big-label {
+      margin-bottom: 4px; } }
 
 /* form: fields */
 .b-form-field {
-  line-height: 0; }
+  line-height: 0;
+  position: relative; }
 
 /* form: controls */
 .b-control {
@@ -1218,14 +1247,6 @@ p {
     opacity: 0;
     transition: opacity 0.3s ease; }
 
-.b-input, .b-select {
-  height: 41px;
-  line-height: 41px; }
-
-.b-input.m-input-small {
-  height: 31px;
-  line-height: 31px; }
-
 .b-textarea {
   padding: 14px 9px;
   resize: vertical; }
@@ -1233,22 +1254,53 @@ p {
     .b-textarea {
       height: 183px; } }
 
+.b-input, .b-select {
+  height: 41px;
+  line-height: 41px; }
+
+.b-input.m-small-input {
+  height: 31px;
+  line-height: 31px; }
+
+.b-input.m-big-input {
+  height: 37px;
+  line-height: 37px; }
+  @media (min-width: 768px) {
+    .b-input.m-big-input {
+      font-size: 1.0625em;
+      height: 62px;
+      line-height: 62px; } }
+
 /* form: controls: ie fixes */
 .ie .b-input {
   line-height: 1em;
   padding: 14px 9px; }
-  .ie .b-input.m-input-small {
+  .ie .b-input.m-big-input {
+    line-height: 1em;
+    padding: 12px 9px; }
+  .ie .b-input.m-small-input {
+    line-height: 1em;
     padding: 9px; }
+  @media (min-width: 768px) {
+    .ie .b-input.m-big-input {
+      line-height: 1em;
+      padding: 21px 9px; } }
 
 /* = Form buttons================================================*/
 .b-btn-holder {
-  margin: 33px 0; }
+  margin: 16px 0; }
+  @media (min-width: 768px) {
+    .b-btn-holder {
+      margin: 33px 0; } }
+
+.b-btn-holder.m-b-reset {
+  margin-bottom: 0; }
 
 .b-btn {
   font: 1em/1 'fira_sansbook';
   color: #fff;
   border-radius: 4px;
-  padding: 6px 12px 4px;
+  padding: 5px 12px;
   min-width: 104px;
   background: #48cbe8;
   border: 2px solid #48cbe8;
@@ -1274,6 +1326,18 @@ p {
   .b-btn.m-neg:active {
     border-color: #687b8f #849db5 #849db5; }
 
+.b-btn.m-big-btn {
+  font-size: 1.3125em;
+  min-width: 133px; }
+  @media (min-width: 768px) {
+    .b-btn.m-big-btn {
+      font-size: 2.25em;
+      padding: 5px 12px;
+      min-width: 226px; } }
+  @media (min-width: 1024px) {
+    .b-btn.m-big-btn {
+      padding: 8px 12px; } }
+
 /* = Form  capture================================================*/
 .b-capture {
   height: 79px;
@@ -1286,49 +1350,59 @@ p {
   vertical-align: middle; }
 
 /* = Form tip================================================*/
-[data-tip-error] {
-  position: relative; }
-  [data-tip-error]:before, [data-tip-error]:after {
-    position: absolute;
-    white-space: nowrap;
-    transition: visibility .5s ease-in-out;
-    visibility: hidden; }
-  [data-tip-error]:before {
-    font: 0.8125em/1 'fira_sansbook';
-    color: #fff;
-    content: attr(data-tip-error);
-    background: #f97e76;
-    border-radius: 2px;
-    padding: 6px 10px;
-    top: -32px;
-    right: 0; }
-  [data-tip-error]:after {
+.b-form-tip {
+  position: absolute;
+  white-space: nowrap;
+  visibility: hidden;
+  transition: visibility .5s ease-in-out;
+  font: 0.6875em/1 'fira_sansbook';
+  color: #fff;
+  content: attr(data-tip-error);
+  background: #f97e76;
+  border-radius: 2px;
+  padding: 6px 6px;
+  bottom: 100%;
+  margin-bottom: 7px;
+  right: 0; }
+  .b-form-tip:after {
     content: '';
-    top: -7px;
-    right: 15px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5px;
     border: 5px solid;
     border-color: #f97e76 transparent transparent transparent; }
   @media (min-width: 768px) {
-    [data-tip-error]:before, [data-tip-error]:after {
-      top: 50%;
+    .b-form-tip {
+      font-size: 0.8125em;
+      padding: 8px 15px;
+      bottom: auto;
       right: 100%;
-      margin-right: 7px; }
-    [data-tip-error]:before {
-      margin-top: -12px; }
-    [data-tip-error]:after {
-      margin-top: -5px;
-      left: -7px;
-      border-color: transparent transparent transparent #f97e76; } }
+      top: 50%;
+      margin-top: -14px;
+      margin-right: 7px;
+      margin-left: 0; }
+      .b-form-tip:after {
+        left: auto;
+        bottom: auto;
+        right: -10px;
+        top: 50%;
+        margin-top: -5px;
+        border-color: transparent transparent transparent #f97e76; } }
 
 @media (min-width: 768px) {
-  [data-tip-pos="right"]:before {
+  .b-form-tip.m-right-tip {
     right: auto;
     left: 100%;
-    margin-left: 7px; }
-  [data-tip-pos="right"]:after {
-    left: auto;
-    right: -14px;
-    border-color: transparent #f97e76 transparent transparent; } }
+    margin-left: 7px;
+    margin-right: 0; }
+    .b-form-tip.m-right-tip:after {
+      left: -5px;
+      right: auto;
+      border-color: transparent #f97e76 transparent transparent; } }
+
+.ie8 .b-form-tip:after {
+  display: none; }
 
 /* = Form errors================================================*/
 .m-error .b-control {
@@ -1344,7 +1418,7 @@ p {
   .m-error .b-control::placeholder {
     color: #959aa8; }
 
-.m-error[data-tip-error]:before, .m-error[data-tip-error]:after {
+.m-error .b-form-tip {
   visibility: visible; }
 
 /* = Form columns================================================*/
@@ -1384,6 +1458,39 @@ p {
         padding-right: 0; }
     .b-columns.m-mob .m-w50 {
       width: 50%; } }
+
+/* = Contact form================================================*/
+.m-contacts-form {
+  max-width: 95%;
+  margin: 7px auto; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .m-contacts-form {
+      max-width: 455px;
+      margin: 40px auto; } }
+  @media (min-width: 1024px) {
+    .m-contacts-form {
+      max-width: 402px;
+      margin: 26px auto; } }
+
+/* = Login form================================================*/
+.b-login-form {
+  border-radius: 2px;
+  box-shadow: 0 4px 7px rgba(13, 16, 7, 0.29);
+  max-width: 590px;
+  width: 93%;
+  margin: 0 auto 15px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-login-form {
+      max-width: 508px; } }
+
+.b-login-form-body {
+  padding: 13px 24px 18px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-login-form-body {
+      padding: 24px 40px 33px; } }
+  @media (min-width: 1024px) {
+    .b-login-form-body {
+      padding: 24px 82px; } }
 
 /* = Animation================================================*/
 /* = Variables, Media, Extends, Mixins================================================*/
