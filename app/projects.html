@@ -48,6 +48,60 @@
 	<p class="b-unhappy-browser">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 
+	<!-- Overlay: start -->
+		<div class="l-overlay"></div>
+	<!-- Overlay: end -->
+
+	<!-- Lighbox add project: start -->
+	<div class="b-lightbox">
+		<div class="b-lightbox-header">
+			<div class="b-lightbox-title">Добавление проекта</div>
+			<a class="b-lightbox-close-btn b-icon-close" href="/"></a>
+		</div>
+		<div class="b-lightbox-body">
+			<form class="b-form">
+				<div class="b-form-line m-reduced">
+					<div class="b-form-label m-small-label">Название проекта</div>
+					<div class="b-form-field">
+						<span class="b-form-tip">Введите название</span>
+						<input class="b-control b-input" type="text" name="name" placeholder="Введите название"/>
+					</div>
+				</div>
+				<div class="b-form-line m-reduced">
+					<div class="b-form-label m-small-label">Картинка проекта</div>
+					<div class="b-form-field">
+						<span class="b-form-tip">Изображение</span>
+						<div class="b-custom-upload">
+							<input class="b-control b-input b-input-file" type="file" name="upload"/>
+							<div class="b-fake-upload">
+								<div class="b-icon-upload"></div>
+								<input class="b-control b-input" type="text" readonly placeholder="Загрузите изображение" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="b-form-line m-reduced">
+					<div class="b-form-label m-small-label">URL проекта</div>
+					<div class="b-form-field">
+						<span class="b-form-tip">Ссылка на проект</span>
+						<input class="b-control b-input" type="text" name="url" placeholder="Добавьте ссылку" />
+					</div>
+				</div>
+				<div class="b-form-line m-reduced">
+					<div class="b-form-label m-small-label">Описание</div>
+					<div class="b-form-field">
+						<span class="b-form-tip">Описание проекта</span>
+						<textarea class="b-control b-textarea b-short-textarea" name="msg" id="" cols="30" rows="5" placeholder="Пара слов о Вашем проекте"></textarea>
+					</div>
+				</div>
+				<div class="b-btn-holder m-reduced m-center">
+					<input type="submit" class="b-btn" value="Добавить"/>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Lighbox add project: start -->
+
 	<!-- Base container: start -->
 	<div class="h-base-container">
 		<!-- Header: start -->
@@ -150,7 +204,7 @@
 									Информация о проекте 4 превью 2 строки
 								</div>
 							</li>
-							<li class="b-project-item">
+							<li class="b-project-item js-add-project">
 								<div class="b-project-img-container m-dashed b-project-add">
 									<img class="b-project-img m-invisible" src="img/misc/project-thumb1.jpg" alt="default project">
 									<div class="b-project-tip m-visible">

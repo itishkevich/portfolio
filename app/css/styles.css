@@ -615,6 +615,11 @@ p {
   .b-icon-contact.m-skype:before {
     background-position: -67px -5px; }
 
+/* = Close icons================================================*/
+.b-icon-close {
+  background-image: url(../img/form/close.png);
+  background-repeat: no-repeat; }
+
 /* = Coloured close icons================================================*/
 .b-icon-msg-close {
   background-image: url(../img/form/close-colored-spr.png);
@@ -1115,7 +1120,7 @@ p {
   padding: 0; }
 
 /* = Form elements================================================*/
-/* form title */
+/* form: title */
 .b-form-title {
   font: 1.1875em/1.25 'fira_sansbook';
   color: #fff;
@@ -1146,7 +1151,7 @@ p {
       padding: 17px 15px;
       border-bottom-width: 15px; } }
 
-/* form body */
+/* form: body */
 .b-form-body {
   background: #eff3f7;
   border-radius: 4px;
@@ -1164,6 +1169,15 @@ p {
   @media (min-width: 768px) {
     .b-form-line.m-spaced {
       margin-bottom: 20px; } }
+
+.b-form-line.m-reduced {
+  margin-bottom: 13px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-form-line.m-reduced {
+      margin-bottom: 15px; } }
+  @media (min-width: 1024px) {
+    .b-form-line.m-reduced {
+      margin-bottom: 10px; } }
 
 /* form: labels */
 .b-form-label {
@@ -1254,6 +1268,9 @@ p {
     .b-textarea {
       height: 183px; } }
 
+.b-textarea.b-short-textarea {
+  height: 111px; }
+
 .b-input, .b-select {
   height: 41px;
   line-height: 41px; }
@@ -1271,10 +1288,42 @@ p {
       height: 62px;
       line-height: 62px; } }
 
+/* form: custom upload */
+.b-custom-upload {
+  position: relative; }
+
+.b-input-file {
+  position: relative;
+  opacity: 0;
+  z-index: 3;
+  padding: 0; }
+
+.b-fake-upload {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+  z-index: 1; }
+
+.b-icon-upload {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 52px;
+  background-color: #48cbe8;
+  background-image: url('../img/form/browse.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 0 4px 4px 0;
+  z-index: 2; }
+
 /* form: controls: ie fixes */
 .ie .b-input {
   line-height: 1em;
-  padding: 14px 9px; }
+  padding: 12px 9px; }
   .ie .b-input.m-big-input {
     line-height: 1em;
     padding: 12px 9px; }
@@ -1293,7 +1342,17 @@ p {
     .b-btn-holder {
       margin: 33px 0; } }
 
+.b-btn-holder.m-reduced {
+  margin: 15px 0; }
+
+.b-btn-holder.m-t-reset {
+  margin-top: 0; }
+
 .b-btn-holder.m-b-reset {
+  margin-bottom: 0; }
+
+.b-btn-holder.m-tb-reset {
+  margin-top: 0;
   margin-bottom: 0; }
 
 .b-btn {
@@ -1338,7 +1397,7 @@ p {
     .b-btn.m-big-btn {
       padding: 8px 12px; } }
 
-/* = Form  capture================================================*/
+/* = Form capture================================================*/
 .b-capture {
   height: 79px;
   line-height: 79px;
@@ -1491,6 +1550,88 @@ p {
   @media (min-width: 1024px) {
     .b-login-form-body {
       padding: 24px 82px; } }
+
+/* = Fixes for old browsers================================================*/
+/* opacity */
+.no-opacity .b-input-file {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
+
+/* = Popup================================================*/
+/* = Overlay================================================*/
+.l-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(88, 105, 122, 0.75);
+  z-index: 1000;
+  display: none; }
+
+/* = Popup================================================*/
+.b-lightbox {
+  z-index: 1001;
+  display: none;
+  border-radius: 4px;
+  width: 97%;
+  max-width: 430px;
+  position: fixed; }
+  @media (min-width: 1024px) {
+    .b-lightbox {
+      max-width: 360px; } }
+
+/* popup: header */
+.b-lightbox-header {
+  padding: 5px 35px 5px 20px;
+  background: #48cbe8;
+  border-bottom: 10px solid #67dffa;
+  border-radius: 4px 4px 0 0;
+  position: relative; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-lightbox-header {
+      text-align: left;
+      padding: 8px 45px 8px 16px; } }
+  @media (min-width: 1024px) {
+    .b-lightbox-header {
+      text-align: left;
+      padding: 4px 45px 4px 12px; } }
+
+.b-lightbox-title {
+  font: 1.5em/1.4 'fira_sansregular';
+  color: #fff;
+  margin: 0; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-lightbox-title {
+      font-size: 1.625em; } }
+  @media (min-width: 1024px) {
+    .b-lightbox-title {
+      font-size: 1.5635em; } }
+
+.b-lightbox-close-btn {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  bottom: 0;
+  width: 25px;
+  background-position: 100% 50%; }
+
+/* popup: body */
+.b-lightbox-body {
+  background: #eff3f7;
+  border-radius: 0 0 4px 4px;
+  padding: 13px 10px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .b-lightbox-body {
+      padding: 18px 27px; } }
+  @media (min-width: 1024px) {
+    .b-lightbox-body {
+      padding: 9px 20px; } }
+
+/* = Fixes for old browsers================================================*/
+/* rgba */
+.no-rgba .l-overlay {
+  background: #7e8c99;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; }
 
 /* = Animation================================================*/
 /* = Variables, Media, Extends, Mixins================================================*/
