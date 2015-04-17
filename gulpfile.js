@@ -55,10 +55,10 @@ gulp.task('js', function () {
 
 // watcher
 gulp.task('watch', function () {
-	gulp.watch(['./app/*.html'], ['html']);
+	gulp.watch(['./app/*.html'], ['html','build']);
 	gulp.watch(['./app/scss/*.scss'], ['sass']);
 	gulp.watch(['./app/css/*.css'], ['css','build']);
-	gulp.watch(['./app/js/*.js'], ['js']);
+	gulp.watch(['./app/js/*.js'], ['js','build']);
 });
 
 // default task
