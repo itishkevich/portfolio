@@ -78,7 +78,7 @@ var path = {
 	src: {
 		html: './app/*.html',
 		css: './app/css/**/*.css',
-		js: './app/js/vendor/*.js',
+		js: './app/js/vendor/*',
 		uglifyjs: './app/js/*.js',
 		img: './app/img/**/*.*',
 		fonts: './app/fonts/**/*.*'
