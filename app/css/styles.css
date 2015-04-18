@@ -625,11 +625,27 @@ p {
 /* = Coloured close icons================================================*/
 .b-icon-msg-close {
   background-image: url(../img/form/close-colored-spr.png);
-  background-repeat: no-repeat; }
-  .b-icon-msg-close.m-green {
-    background-position: -2px -2px; }
-  .b-icon-msg-close.m-red {
-    background-position: -17px -2px; }
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  position: absolute;
+  right: -8px;
+  top: 0;
+  height: 15px;
+  width: 15px;
+  cursor: pointer; }
+  .b-icon-msg-close:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px; }
+
+.m-success .b-icon-msg-close {
+  background-position: -2px -2px; }
+
+.m-error .b-icon-msg-close {
+  background-position: -17px -2px; }
 
 /* = Login icons================================================*/
 .b-icon-login {
@@ -836,11 +852,7 @@ p {
   background: #3ba8c0;
   background: linear-gradient(to bottom, #3ba8c0 0%, #3ba8c0 47%, #2e8ca2 48%, #2e8ca2 100%);
   border-radius: 2px;
-  cursor: pointer;
-  transition: background .5s ease-in-out; }
-  .b-skill-item:hover {
-    background: #2e8ca2;
-    background: linear-gradient(to top, #3ba8c0 0%, #3ba8c0 47%, #2e8ca2 48%, #2e8ca2 100%); }
+  cursor: default; }
   @media (min-width: 768px) {
     .b-skill-item {
       margin: 4px 12px 4px 0;
@@ -1258,8 +1270,11 @@ p {
     .b-textarea {
       height: 183px; } }
 
-.b-textarea.b-short-textarea {
+.b-textarea.m-short-textarea {
   height: 111px; }
+
+.b-textarea.m-no-resize {
+  resize: none; }
 
 .b-input, .b-select {
   height: 41px;
@@ -1299,14 +1314,14 @@ p {
 
 .b-icon-upload {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
   width: 52px;
   background-color: #48cbe8;
   background-image: url('../img/form/browse.png');
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 49%;
   border-radius: 0 4px 4px 0;
   z-index: 2; }
 
@@ -1324,6 +1339,9 @@ p {
     .ie .b-input.m-big-input {
       line-height: 1em;
       padding: 21px 9px; } }
+
+.ie8 input[type="password"] {
+  font-family: arial, sans-serif; }
 
 /* = Form buttons================================================*/
 .b-btn-holder {
@@ -1367,6 +1385,10 @@ p {
   .b-btn:active {
     border-color: #3ba8c0 #48cbe8 #48cbe8; }
 
+.b-btn[disabled] {
+  opacity: 0.5;
+  border-bottom-color: #48cbe8; }
+
 .b-btn.m-neg {
   background: #849db5;
   border-color: #849db5 #849db5 #687b8f; }
@@ -1403,7 +1425,7 @@ p {
   position: absolute;
   white-space: nowrap;
   visibility: hidden;
-  transition: visibility .5s ease-in-out;
+  opacity: 0;
   font: 0.6875em/1 'fira_sansbook';
   color: #fff;
   background: #f97e76;
@@ -1411,7 +1433,11 @@ p {
   padding: 6px 6px;
   bottom: 100%;
   margin-bottom: 7px;
-  right: 0; }
+  right: 0;
+  transition: all .2s ease-in-out;
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px); }
   .b-form-tip:after {
     content: '';
     position: absolute;
@@ -1429,7 +1455,10 @@ p {
       top: 50%;
       margin-top: -14px;
       margin-right: 7px;
-      margin-left: 0; }
+      margin-left: 0;
+      -webkit-transform: translateX(-100px);
+      -ms-transform: translateX(-100px);
+      transform: translateX(-100px); }
       .b-form-tip:after {
         left: auto;
         bottom: auto;
@@ -1438,16 +1467,20 @@ p {
         margin-top: -5px;
         border-color: transparent transparent transparent #f97e76; } }
 
-@media (min-width: 768px) {
-  .b-form-tip.m-right-tip {
-    right: auto;
-    left: 100%;
-    margin-left: 7px;
-    margin-right: 0; }
-    .b-form-tip.m-right-tip:after {
-      left: -5px;
+.b-form-tip.m-right-tip {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px); }
+  @media (min-width: 768px) {
+    .b-form-tip.m-right-tip {
       right: auto;
-      border-color: transparent #f97e76 transparent transparent; } }
+      left: 100%;
+      margin-left: 7px;
+      margin-right: 0; }
+      .b-form-tip.m-right-tip:after {
+        left: -5px;
+        right: auto;
+        border-color: transparent #f97e76 transparent transparent; } }
 
 .ie8 .b-form-tip:after {
   display: none; }
@@ -1456,7 +1489,8 @@ p {
 .m-error .b-control {
   color: #959aa8;
   background: #fdd5d2;
-  border-color: #f97e76; }
+  border-color: #f97e76;
+  transition: all .2s ease-in-out; }
   .m-error .b-control::-webkit-input-placeholder {
     color: #959aa8; }
   .m-error .b-control::-moz-placeholder {
@@ -1467,7 +1501,39 @@ p {
     color: #959aa8; }
 
 .m-error .b-form-tip {
+  opacity: 1;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   visibility: visible; }
+
+/* = Form messages================================================*/
+.b-form-msg {
+  padding: 5px 10px 5px 5px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-bottom: 23px; }
+  @media (min-width: 1024px) {
+    .b-form-msg {
+      margin-bottom: 15px; } }
+  .b-form-msg.m-success {
+    color: #49bb7b;
+    background: #c3e9d4;
+    border-color: #49bb7b; }
+  .b-form-msg.m-error {
+    color: #f97e76;
+    background: #fdd5d2;
+    border-color: #f97e76; }
+  .b-form-msg-title {
+    font: 1.125em/1.2 'fira_sansbook';
+    position: relative; }
+  .b-form-msg-body {
+    font: 0.8125em/1.2 'fira_sansbook'; }
+  @media (min-width: 768px) {
+    .b-form-msg-title {
+      font-size: 1.5625em; }
+    .b-form-msg-body {
+      font-size: 0.9375em; } }
 
 /* = Form columns================================================*/
 @media (min-width: 768px) {
