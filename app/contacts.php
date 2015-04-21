@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
 <!--[if IE]>  <html class="no-js ie" lang="en"> <![endif]-->
@@ -42,6 +45,7 @@
 
 	<!-- JS -->
 	<script src="js/vendor/modernizr.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 	<!--[if lt IE 8]>
@@ -55,7 +59,8 @@
 			<div class="b-header m-cfix">
 				<!-- Logo: start -->
 				<a class="b-logo" href="/">
-					<img class="b-logo-img" src="img/misc/logo.png" alt="logo">
+					<img class="b-logo-img" src="img/misc/logo.png" alt="logo"/>
+					<span class="b-logo-text m-hidden">Сайт Порфолио</span>
 				</a>
 				<!-- Logo: end -->
 				<!-- Social icons: start -->
@@ -73,9 +78,9 @@
 						<!-- Navigation: start -->
 						<nav class="b-nav m-flyout">
 							<ul class="b-nav-list">
-								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow" href="index.html">Обо мне</a></li>
-								<li class="b-nav-item"><a class="b-nav-link" href="projects.html">Мои работы</a></li>
-								<li class="b-nav-item"><a class="b-nav-link m-active" href="contacts.html">Связаться со мной</a></li>
+								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow" href="index.php">Обо мне</a></li>
+								<li class="b-nav-item"><a class="b-nav-link" href="projects.php">Мои работы</a></li>
+								<li class="b-nav-item"><a class="b-nav-link m-active" href="contacts.php">Связаться со мной</a></li>
 							</ul>
 						</nav>
 						<!-- Navigation: end -->
@@ -93,7 +98,7 @@
 				<section class="b-section m-cfix">
 					<h2 class="b-form-title">У вас интересный проект? Напишите мне</h2>
 					<div class="b-form-body">
-						<form class="b-form m-contacts-form">
+						<form action="php/contacts.php" class="b-form m-contacts-form" method="post" enctype="multipart/form-data">
 							<div class="b-form-line b-columns">
 								<div class="b-col m-w50">
 									<div class="b-form-label">Имя</div>
@@ -118,21 +123,8 @@
 								</div>
 							</div>
 							<div class="b-form-line">
-								<div class="b-form-label m-small-label">Введите код, указанный на картинке</div>
-								<div class="b-columns m-mob">
-									<div class="b-col m-w50">
-										<div class="b-form-field">
-											<div class="b-capture b-control">
-												<img class="b-capture-img" src="img/form/capture.png" alt="capture"/>
-											</div>
-										</div>
-									</div>
-									<div class="b-col m-w50">
-										<div class="b-form-field">
-											<span class="b-form-tip m-right-tip">Вы не ввели код</span>
-											<input class="b-control b-input m-small-input required" type="text" name="capture_value" placeholder="Введите код" />
-										</div>
-									</div>
+								<div class="b-form-field m-center">
+									<div class="g-recaptcha" data-sitekey="6LdCkwUTAAAAACy1DjwmXJ1-ULa1oU0sdYHSv-sU"></div>
 								</div>
 							</div>
 							<div class="b-btn-holder b-columns m-mob">
@@ -154,9 +146,9 @@
 				<!-- Navigation: start -->
 				<nav class="b-nav">
 					<ul class="b-nav-list">
-						<li class="b-nav-item"><a class="b-nav-link" href="index.html">Обо мне</a></li>
-						<li class="b-nav-item"><a class="b-nav-link" href="projects.html">Мои работы</a></li>
-						<li class="b-nav-item"><a class="b-nav-link m-active" href="contacts.html">Связаться со мной</a></li>
+						<li class="b-nav-item"><a class="b-nav-link" href="index.php">Обо мне</a></li>
+						<li class="b-nav-item"><a class="b-nav-link" href="projects.php">Мои работы</a></li>
+						<li class="b-nav-item"><a class="b-nav-link m-active" href="contacts.php">Связаться со мной</a></li>
 					</ul>
 				</nav>
 				<!-- Navigation: end -->
@@ -191,7 +183,11 @@
 	<div class="l-footer">
 		<footer class="b-footer">
 			<div class="b-footer-login">
-				<a class="b-icon-login m-lock" href="login.html">login</a>
+				<?php if (isset($_SESSION['auth'])) : ?>
+					<a class="b-icon-login m-open" href="php/logout.php">logout</a>
+				<?php else: ?>
+					<a class="b-icon-login m-lock" href="login.php">login</a>
+				<?php endif; ?>
 			</div>
 			<p class="b-copyright">&copy; 2015, Это мой сайт, пожалуйста, не копируйте и не воруйте его.</p>
 		</footer>

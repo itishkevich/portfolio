@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
 <!--[if IE]>  <html class="no-js ie" lang="en"> <![endif]-->
@@ -55,7 +58,8 @@
 			<div class="b-header m-cfix">
 				<!-- Logo: start -->
 				<a class="b-logo" href="/">
-					<img class="b-logo-img" src="img/misc/logo.png" alt="logo">
+					<img class="b-logo-img" src="img/misc/logo.png" alt="logo"/>
+					<span class="b-logo-text m-hidden">Сайт Порфолио</span>
 				</a>
 				<!-- Logo: end -->
 				<!-- Social icons: start -->
@@ -73,9 +77,9 @@
 						<!-- Navigation: start -->
 						<nav class="b-nav m-flyout">
 							<ul class="b-nav-list">
-								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow m-active" href="index.html">Обо мне</a></li>
-								<li class="b-nav-item"><a class="b-nav-link" href="projects.html">Мои работы</a></li>
-								<li class="b-nav-item"><a class="b-nav-link" href="contacts.html">Связаться со мной</a></li>
+								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow m-active" href="index.php">Обо мне</a></li>
+								<li class="b-nav-item"><a class="b-nav-link" href="projects.php">Мои работы</a></li>
+								<li class="b-nav-item"><a class="b-nav-link" href="contacts.php">Связаться со мной</a></li>
 							</ul>
 						</nav>
 						<!-- Navigation: end -->
@@ -169,9 +173,9 @@
 				<!-- Navigation: start -->
 				<nav class="b-nav">
 					<ul class="b-nav-list">
-						<li class="b-nav-item"><a class="b-nav-link m-active" href="index.html">Обо мне</a></li>
-						<li class="b-nav-item"><a class="b-nav-link" href="projects.html">Мои работы</a></li>
-						<li class="b-nav-item"><a class="b-nav-link" href="contacts.html">Связаться со мной</a></li>
+						<li class="b-nav-item"><a class="b-nav-link m-active" href="index.php">Обо мне</a></li>
+						<li class="b-nav-item"><a class="b-nav-link" href="projects.php">Мои работы</a></li>
+						<li class="b-nav-item"><a class="b-nav-link" href="contacts.php">Связаться со мной</a></li>
 					</ul>
 				</nav>
 				<!-- Navigation: end -->
@@ -206,7 +210,11 @@
 	<div class="l-footer">
 		<footer class="b-footer">
 			<div class="b-footer-login">
-				<a class="b-icon-login m-lock" href="login.html">login</a>
+				<?php if (isset($_SESSION['auth'])) : ?>
+					<a class="b-icon-login m-open" href="php/logout.php">logout</a>
+				<?php else: ?>
+					<a class="b-icon-login m-lock" href="login.php">login</a>
+				<?php endif; ?>
 			</div>
 			<p class="b-copyright">&copy; 2015, Это мой сайт, пожалуйста, не копируйте и не воруйте его.</p>
 		</footer>

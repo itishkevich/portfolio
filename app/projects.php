@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
 <!--[if IE]>  <html class="no-js ie" lang="en"> <![endif]-->
@@ -53,13 +56,13 @@
 	<!-- Overlay: end -->
 
 	<!-- Lighbox add project: start -->
-	<div class="b-lightbox">
+	<div class="b-lightbox" id="add-project">
 		<div class="b-lightbox-header">
 			<div class="b-lightbox-title">Добавление проекта</div>
 			<a class="b-lightbox-close-btn b-icon-close" href="/"></a>
 		</div>
 		<div class="b-lightbox-body">
-			<form class="b-form">
+			<form action="php/projects.php" class="b-form" method="post" enctype="multipart/form-data">
 				<div class="b-form-line m-reduced">
 					<div class="b-form-label m-small-label">Название проекта</div>
 					<div class="b-form-field">
@@ -72,10 +75,10 @@
 					<div class="b-form-field">
 						<span class="b-form-tip">Изображение</span>
 						<div class="b-custom-upload">
-							<input class="b-control b-input b-input-file" type="file" name="upload"/>
+							<input class="b-control b-input b-input-file" type="file" name="upload" id="upload"/>
 							<div class="b-fake-upload">
 								<div class="b-icon-upload"></div>
-								<input class="b-control b-input required" type="text" readonly placeholder="Загрузите изображение" />
+								<input class="b-control b-input required b-fake-input" type="text" readonly placeholder="Загрузите изображение" />
 							</div>
 						</div>
 					</div>
@@ -109,7 +112,8 @@
 			<div class="b-header m-cfix">
 				<!-- Logo: start -->
 				<a class="b-logo" href="/">
-					<img class="b-logo-img" src="img/misc/logo.png" alt="logo">
+					<img class="b-logo-img" src="img/misc/logo.png" alt="logo"/>
+					<span class="b-logo-text m-hidden">Сайт Порфолио</span>
 				</a>
 				<!-- Logo: end -->
 				<!-- Social icons: start -->
@@ -127,9 +131,9 @@
 						<!-- Navigation: start -->
 						<nav class="b-nav m-flyout">
 							<ul class="b-nav-list">
-								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow" href="index.html">Обо мне</a></li>
-								<li class="b-nav-item"><a class="b-nav-link m-active" href="projects.html">Мои работы</a></li>
-								<li class="b-nav-item"><a class="b-nav-link" href="contacts.html">Связаться со мной</a></li>
+								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow" href="index.php">Обо мне</a></li>
+								<li class="b-nav-item"><a class="b-nav-link m-active" href="projects.php">Мои работы</a></li>
+								<li class="b-nav-item"><a class="b-nav-link" href="contacts.php">Связаться со мной</a></li>
 							</ul>
 						</nav>
 						<!-- Navigation: end -->
@@ -204,17 +208,19 @@
 									Информация о проекте 4 превью 2 строки
 								</div>
 							</li>
-							<li class="b-project-item js-add-project">
-								<div class="b-project-img-container m-dashed b-project-add">
-									<img class="b-project-img m-invisible" src="img/misc/project-thumb1.jpg" alt="default project">
-									<div class="b-project-tip m-visible">
-										<div class="b-project-tip-text b-project-add-text">
-											<img class="b-project-add-icon" src="img/icon/project.png" alt="Add project">
-											<div class="b-project-add-label">Добавить проект</div>
+							<?php if (isset($_SESSION['auth'])) : ?>
+								<li class="b-project-item js-add-project">
+									<div class="b-project-img-container m-dashed b-project-add">
+										<img class="b-project-img m-invisible" src="img/misc/project-thumb1.jpg" alt="default project">
+										<div class="b-project-tip m-visible">
+											<div class="b-project-tip-text b-project-add-text">
+												<img class="b-project-add-icon" src="img/icon/project.png" alt="Add project">
+												<div class="b-project-add-label">Добавить проект</div>
+											</div>
 										</div>
 									</div>
-								</div>
-							</li>
+								</li>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</section>
@@ -226,9 +232,9 @@
 				<!-- Navigation: start -->
 				<nav class="b-nav">
 					<ul class="b-nav-list">
-						<li class="b-nav-item"><a class="b-nav-link" href="index.html">Обо мне</a></li>
-						<li class="b-nav-item"><a class="b-nav-link m-active" href="projects.html">Мои работы</a></li>
-						<li class="b-nav-item"><a class="b-nav-link" href="contacts.html">Связаться со мной</a></li>
+						<li class="b-nav-item"><a class="b-nav-link" href="index.php">Обо мне</a></li>
+						<li class="b-nav-item"><a class="b-nav-link m-active" href="projects.php">Мои работы</a></li>
+						<li class="b-nav-item"><a class="b-nav-link" href="contacts.php">Связаться со мной</a></li>
 					</ul>
 				</nav>
 				<!-- Navigation: end -->
@@ -263,7 +269,11 @@
 	<div class="l-footer">
 		<footer class="b-footer">
 			<div class="b-footer-login">
-				<a class="b-icon-login m-lock" href="login.html">login</a>
+				<?php if (isset($_SESSION['auth'])) : ?>
+					<a class="b-icon-login m-open" href="php/logout.php">logout</a>
+				<?php else: ?>
+					<a class="b-icon-login m-lock" href="login.php">login</a>
+				<?php endif; ?>
 			</div>
 			<p class="b-copyright">&copy; 2015, Это мой сайт, пожалуйста, не копируйте и не воруйте его.</p>
 		</footer>

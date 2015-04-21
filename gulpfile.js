@@ -19,9 +19,9 @@ gulp.task('connect', function () {
 	open('http://localhost:8888');
 });
 
-// html
-gulp.task('html', function () {
-	gulp.src('./app/*.html')
+// php
+gulp.task('php', function () {
+	gulp.src('./app/*.php')
 		.pipe(connect.reload());
 });
 
@@ -55,7 +55,7 @@ gulp.task('js', function () {
 
 // watcher
 gulp.task('watch', function () {
-	gulp.watch(['./app/*.html'], ['html','build']);
+	gulp.watch(['./app/*.php'], ['php','build']);
 	gulp.watch(['./app/scss/*.scss'], ['sass']);
 	gulp.watch(['./app/css/*.css'], ['css','build']);
 	gulp.watch(['./app/js/*.js'], ['js','build']);
@@ -68,7 +68,8 @@ gulp.task('default', ['connect', 'watch']);
 // Build
 var path = {
 	build: {
-		html: './dist/',
+		php: './dist/',
+		phpsrc: './dist/php/',
 		css: './dist/css/',
 		js: './dist/js/',
 		jsvendor: './dist/js/vendor/',
@@ -76,7 +77,8 @@ var path = {
 		fonts: './dist/fonts/'
 	},
 	src: {
-		html: './app/*.html',
+		php: './app/*.php',
+		phpsrc: './app/php/**/*.*',
 		css: './app/css/**/*.css',
 		js: './app/js/vendor/*',
 		uglifyjs: './app/js/*.js',
@@ -84,7 +86,7 @@ var path = {
 		fonts: './app/fonts/**/*.*'
 	},
 	watch: {
-		html: './app/**/*.html',
+		php: './app/**/*.php',
 		css: './app/css/**/*.css',
 		js: './app/js/**/*.js',
 		img: './app/img/**/*.*',
@@ -93,8 +95,10 @@ var path = {
 	clean: './dist'
 };
 
-gulp.task('html:build', function () {
-	gulp.src(path.src.html)
+gulp.task('php:build', function () {
+	gulp.src(path.src.phpsrc)
+		.pipe(gulp.dest(path.build.phpsrc));
+	gulp.src(path.src.php)
 		.pipe(minifyHTML({
 			empty:true,
 			conditionals:true,
@@ -102,7 +106,7 @@ gulp.task('html:build', function () {
 			comments:true
 		}))
 		.pipe(usemin())
-		.pipe(gulp.dest(path.build.html));
+		.pipe(gulp.dest(path.build.php));
 });
 
 gulp.task('css:build', function () {
@@ -135,4 +139,4 @@ gulp.task('clean', function () {
 		.pipe(clean());
 });
 
-gulp.task('build', ['html:build','css:build','js:build','img:build','fonts:build']);
+gulp.task('build', ['php:build','css:build','js:build','img:build','fonts:build']);

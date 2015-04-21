@@ -1421,6 +1421,14 @@ p {
   display: inline-block;
   vertical-align: middle; }
 
+.g-recaptcha {
+  margin: 0 auto;
+  width: 304px; }
+  @media (max-width: 320px) {
+    .g-recaptcha {
+      margin: 0 -20px;
+      width: 304px; } }
+
 /* = Form tip================================================*/
 .b-form-tip {
   position: absolute;

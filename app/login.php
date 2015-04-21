@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
 <!--[if IE]>  <html class="no-js ie" lang="en"> <![endif]-->
@@ -55,7 +58,7 @@
 			<!-- Login form: start -->
 			<div class="b-login-form">
 				<h2 class="b-form-title m-big-font">Авторизуйтесь</h2>
-				<form class="b-form b-form-body b-login-form-body">
+				<form action="php/auth.php" class="b-form b-form-body b-login-form-body" method="post" enctype="multipart/form-data">
 					<div class="b-form-line m-spaced">
 						<div class="b-form-label m-big-label m-center">Логин</div>
 						<div class="b-form-field">
@@ -85,7 +88,11 @@
 	<div class="l-footer">
 		<footer class="b-footer">
 			<div class="b-footer-login">
-				<a class="b-icon-login m-lock" href="login.html">login</a>
+				<?php if (isset($_SESSION['auth'])) : ?>
+					<a class="b-icon-login m-open" href="php/logout.php">logout</a>
+				<?php else: ?>
+					<a class="b-icon-login m-lock" href="login.php">login</a>
+				<?php endif; ?>
 			</div>
 			<p class="b-copyright">&copy; 2015, Это мой сайт, пожалуйста, не копируйте и не воруйте его.</p>
 		</footer>
