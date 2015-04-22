@@ -658,8 +658,12 @@ p {
   background-repeat: no-repeat; }
   .b-icon-login.m-lock {
     background-position: -5px -5px; }
+    .b-icon-login.m-lock:hover {
+      background-position: -35px -5px; }
   .b-icon-login.m-open {
     background-position: -35px -5px; }
+    .b-icon-login.m-open:hover {
+      background-position: -5px -5px; }
 
 /* = Education icons================================================*/
 .b-icon-education {
