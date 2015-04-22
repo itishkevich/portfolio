@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$page = 'login';
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js ie ie8" lang="ru"> <![endif]-->
@@ -85,18 +86,9 @@
 	</div>
 	<!-- Base container: end -->
 	<!-- Footer: start -->
-	<div class="l-footer">
-		<footer class="b-footer">
-			<div class="b-footer-login">
-				<?php if (isset($_SESSION['auth'])) : ?>
-					<a class="b-icon-login m-open" href="php/logout.php">logout</a>
-				<?php else: ?>
-					<a class="b-icon-login m-lock" href="login.php">login</a>
-				<?php endif; ?>
-			</div>
-			<p class="b-copyright">&copy; 2015, Это мой сайт, пожалуйста, не копируйте и не воруйте его.</p>
-		</footer>
-	</div>
+	<?php
+		include 'includes/footer.php';
+	?>
 	<!-- Footer: end -->
 
 	<!-- JS: start -->

@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$page = 'index';
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js ie ie8" lang="ru"> <![endif]-->
@@ -54,40 +55,10 @@
 	<!-- Base container: start -->
 	<div class="h-base-container">
 		<!-- Header: start -->
-		<header class="l-header">
-			<div class="b-header m-cfix">
-				<!-- Logo: start -->
-				<a class="b-logo" href="/">
-					<img class="b-logo-img" src="img/misc/logo.png" alt="logo"/>
-					<span class="b-logo-text m-hidden">Сайт Порфолио</span>
-				</a>
-				<!-- Logo: end -->
-				<!-- Social icons: start -->
-				<ul class="b-social-list">
-					<li class="b-social-item"><a class="b-icon-social m-vk" href="#" target="_blank">vk</a></li>
-					<li class="b-social-item"><a class="b-icon-social m-twitter" href="#" target="_blank">twitter</a></li>
-					<li class="b-social-item"><a class="b-icon-social m-facebook" href="#" target="_blank">facebook</a></li>
-					<li class="b-social-item"><a class="b-icon-social m-github" href="#" target="_blank">github</a></li>
-				</ul>
-				<!-- Social icons: end -->
-				<!-- Nav toggle: start -->
-				<div class="b-nav-toggle">
-					<a class="b-icon-nav" href="#"></a>
-					<div class="b-nav-flyout">
-						<!-- Navigation: start -->
-						<nav class="b-nav m-flyout">
-							<ul class="b-nav-list">
-								<li class="b-nav-item "><a class="b-nav-link b-nav-arrow m-active" href="index.php">Обо мне</a></li>
-								<li class="b-nav-item"><a class="b-nav-link" href="projects.php">Мои работы</a></li>
-								<li class="b-nav-item"><a class="b-nav-link" href="contacts.php">Связаться со мной</a></li>
-							</ul>
-						</nav>
-						<!-- Navigation: end -->
-					</div>
-				</div>
-				<!-- Nav toggle: end -->
-			</div>
-		</header>
+		<?php
+			$page = 'index';
+			include 'includes/header.php';
+		?>
 		<!-- Header: end -->
 		<!-- Content: start -->
 		<div class="b-content-container m-cfix">
@@ -169,56 +140,25 @@
 			</div>
 			<!-- Main content: end -->
 			<!-- Sidebar: start -->
-			<aside class="b-sidebar">
-				<!-- Navigation: start -->
-				<nav class="b-nav">
-					<ul class="b-nav-list">
-						<li class="b-nav-item"><a class="b-nav-link m-active" href="index.php">Обо мне</a></li>
-						<li class="b-nav-item"><a class="b-nav-link" href="projects.php">Мои работы</a></li>
-						<li class="b-nav-item"><a class="b-nav-link" href="contacts.php">Связаться со мной</a></li>
-					</ul>
-				</nav>
-				<!-- Navigation: end -->
-				<!-- Contacts: start -->
-				<div class="b-contacts">
-					<div class="b-contact-title">
-						<span class="b-contact-text">Контакты</span>
-					</div>
-					<ul class="b-contact-list">
-						<li class="b-contact-item"><a class="b-contact-link b-icon-contact m-mail" href="mailto:irina.tsishkevich@gmail.com">irina@gmail.com</a></li>
-						<li class="b-contact-item"><a class="b-contact-link b-icon-contact m-phone" href="tel:+375291111111">+375291111111</a></li>
-						<li class="b-contact-item"><a class="b-contact-link b-icon-contact m-skype" href="skype:irina.zankevich?chat">irina.zankevich</a></li>
-					</ul>
-				</div>
-				<!-- Contacts: end -->
-			</aside>
+			<?php
+				include 'includes/sidebar.php';
+			?>
 			<!-- Sidebar: end -->
 		</div>
 		<!-- Content: end -->
 		<!-- Social icons: start -->
-		<ul class="b-social-list m-invert m-mob">
-			<li class="b-social-item"><a class="b-icon-social m-vk" href="#">vk</a></li>
-			<li class="b-social-item"><a class="b-icon-social m-twitter" href="#">twitter</a></li>
-			<li class="b-social-item"><a class="b-icon-social m-facebook" href="#">facebook</a></li>
-			<li class="b-social-item"><a class="b-icon-social m-github" href="#">github</a></li>
-		</ul>
+		<?php
+			$version = 'mob';
+			include 'includes/social.php';
+		?>
 		<!-- Social icons: end -->
 		<div class="b-footer-push"></div>
 	</div>
 	<!-- Base container: end -->
 	<!-- Footer: start -->
-	<div class="l-footer">
-		<footer class="b-footer">
-			<div class="b-footer-login">
-				<?php if (isset($_SESSION['auth'])) : ?>
-					<a class="b-icon-login m-open" href="php/logout.php">logout</a>
-				<?php else: ?>
-					<a class="b-icon-login m-lock" href="login.php">login</a>
-				<?php endif; ?>
-			</div>
-			<p class="b-copyright">&copy; 2015, Это мой сайт, пожалуйста, не копируйте и не воруйте его.</p>
-		</footer>
-	</div>
+	<?php
+		include 'includes/footer.php';
+	?>
 	<!-- Footer: end -->
 
 	<!-- JS: start -->
