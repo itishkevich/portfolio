@@ -2,9 +2,9 @@
 	session_start();
 ?>
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if IE]>  <html class="no-js ie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if IE 8]> <html class="no-js ie ie8" lang="ru"> <![endif]-->
+<!--[if IE]>  <html class="no-js ie" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
 <head>
 	<title>Портфолио: Мои работы</title>
 	<meta charset="utf-8">

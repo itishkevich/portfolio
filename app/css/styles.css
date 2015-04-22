@@ -1313,6 +1313,9 @@ p {
   padding: 0;
   z-index: 1; }
 
+.b-fake-input {
+  padding-right: 62px; }
+
 .b-icon-upload {
   position: absolute;
   right: 1px;
