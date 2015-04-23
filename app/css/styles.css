@@ -1,7 +1,5 @@
-/* = Fonts
-================================================*/
-/* = Fira
-================================================*/
+/* = Fonts================================================*/
+/* = Fira================================================*/
 @font-face {
   font-family: 'fira_sanslight';
   src: url('../fonts/fira/firasans-light.eot');
@@ -37,8 +35,7 @@
   font-weight: normal;
   font-style: normal; }
 
-/* = Proxima Nova
-================================================*/
+/* = Proxima Nova================================================*/
 @font-face {
   font-family: 'proxima_novasemibold';
   src: url('../fonts/proximanova/ProximaNova-Semibold-webfont.eot');
@@ -46,10 +43,8 @@
   font-weight: normal;
   font-style: normal; }
 
-/* = Main
-================================================*/
-/* = Variables, Media, Extends, Mixins
-================================================*/
+/* = Main================================================*/
+/* = Variables, Media, Extends, Mixins================================================*/
 /* font family: fira */
 /* font family: proxima nova */
 /* colors and default variables */
@@ -61,8 +56,7 @@
   margin: 0;
   padding: 0; }
 
-/* = General
-================================================*/
+/* = General================================================*/
 * {
   box-sizing: border-box; }
 
@@ -81,8 +75,7 @@ body {
 img {
   max-width: 100%; }
 
-/* = Typography
-================================================*/
+/* = Typography================================================*/
 h1 {
   font-size: 1.6875em; }
 
@@ -95,16 +88,14 @@ h3 {
 p {
   font-size: 0.9375em; }
 
-/* = Layout
-================================================*/
+/* = Layout================================================*/
 /* main container */
 .h-base-container {
   min-height: 100%;
   overflow: hidden;
   position: relative; }
 
-/* = Header
-================================================*/
+/* = Header================================================*/
 .l-header {
   padding: 9px 15px;
   line-height: 37px;
@@ -147,8 +138,7 @@ p {
   display: inline-block;
   vertical-align: middle; }
 
-/* = Footer
-================================================*/
+/* = Footer================================================*/
 .l-footer {
   padding: 0 30px;
   background: #eff3f7;
@@ -222,15 +212,13 @@ p {
     .b-copyright {
       font-size: 0.8125em; } }
 
-/* = Fixes for old browsers
-================================================*/
+/* = Fixes for old browsers================================================*/
 .no-cssgradients .l-header:after, .no-cssgradients .l-footer:after {
   background-image: url('../img/bg/ie-grad-seprator.jpg');
   background-repeat: no-repeat;
   background-position: 50% 50%; }
 
-/* = Columns
-================================================*/
+/* = Columns================================================*/
 .b-content-container {
   padding: 15px 13px 0; }
   @media (min-width: 768px) and (max-width: 1023px) {
@@ -253,8 +241,7 @@ p {
     float: right;
     width: 67.70833%; } }
 
-/* = Section
-================================================*/
+/* = Section================================================*/
 .b-section {
   background: #eff3f7;
   border-radius: 4px;
@@ -306,8 +293,7 @@ p {
     .b-section-body {
       padding: 20px; } }
 
-/* = Navigation
-================================================*/
+/* = Navigation================================================*/
 .b-nav {
   display: none; }
   .b-nav.m-flyout {
@@ -398,12 +384,7 @@ p {
   .b-nav-link.m-active {
     color: #fff;
     background: #3ba8c0;
-    /*@media (min-width: 768px) and (max-width: 1023px) {
-			font-size: 1.3125em;
-		}
-		@media (min-width: 1024px) {
-			font-size: 1.4375em;
-		}*/ }
+    /*@media (min-width: 768px) and (max-width: 1023px) {			font-size: 1.3125em;		}		@media (min-width: 1024px) {			font-size: 1.4375em;		}*/ }
 
 /* nav toggle */
 @media (min-width: 1024px) {
@@ -442,8 +423,7 @@ p {
 .b-nav-arrow.m-active:after {
   border-bottom-color: #3ba8c0; }
 
-/* = Social list
-================================================*/
+/* = Social list================================================*/
 .b-social-list {
   margin: 0;
   padding: 0;
@@ -477,8 +457,7 @@ p {
 .m-mob .b-social-item {
   margin: 0 10px; }
 
-/* = Contacts
-================================================*/
+/* = Contacts================================================*/
 .b-contacts {
   margin: 0 -13px;
   text-align: center; }
@@ -541,8 +520,7 @@ p {
     .b-contact-link {
       padding: 11px 18px; } }
 
-/* = Unhappy browser
-================================================*/
+/* = Unhappy browser================================================*/
 .b-unhappy-browser {
   margin: 0.2em 0;
   background: #ccc;
@@ -550,8 +528,7 @@ p {
   padding: 0.3em;
   text-align: center; }
 
-/* = Global Modifiers
-================================================*/
+/* = Global Modifiers================================================*/
 .m-hidden {
   display: none !important;
   visibility: hidden; }
@@ -581,8 +558,7 @@ p {
 .m-right {
   text-align: right !important; }
 
-/* = Cleaner
-================================================*/
+/* = Cleaner================================================*/
 .m-cfix:before, .m-cfix:after {
   content: "";
   display: table; }
@@ -590,10 +566,8 @@ p {
 .m-cfix:after {
   clear: both; }
 
-/* = Icons
-================================================*/
-/* = Variables, Media, Extends, Mixins
-================================================*/
+/* = Icons================================================*/
+/* = Variables, Media, Extends, Mixins================================================*/
 /* font family: fira */
 /* font family: proxima nova */
 /* colors and default variables */
@@ -605,8 +579,7 @@ p {
   margin: 0;
   padding: 0; }
 
-/* = Nav icons
-================================================*/
+/* = Nav icons================================================*/
 .b-icon-nav {
   position: absolute;
   top: 0;
@@ -617,8 +590,7 @@ p {
   background-repeat: no-repeat;
   background-position: right center; }
 
-/* = Contact icons
-================================================*/
+/* = Contact icons================================================*/
 .b-icon-contact {
   position: relative; }
   @media (min-width: 321px) and (max-width: 768px) {
@@ -646,14 +618,12 @@ p {
   .b-icon-contact.m-skype:before {
     background-position: -67px -5px; }
 
-/* = Close icons
-================================================*/
+/* = Close icons================================================*/
 .b-icon-close {
   background-image: url(../img/form/close.png);
   background-repeat: no-repeat; }
 
-/* = Coloured close icons
-================================================*/
+/* = Coloured close icons================================================*/
 .b-icon-msg-close {
   background-image: url(../img/form/close-colored-spr.png);
   background-repeat: no-repeat;
@@ -678,8 +648,7 @@ p {
 .m-error .b-icon-msg-close {
   background-position: -17px -2px; }
 
-/* = Login icons
-================================================*/
+/* = Login icons================================================*/
 .b-icon-login {
   display: block;
   width: 20px;
@@ -689,11 +658,14 @@ p {
   background-repeat: no-repeat; }
   .b-icon-login.m-lock {
     background-position: -5px -5px; }
+    .b-icon-login.m-lock:hover {
+      background-position: -35px -5px; }
   .b-icon-login.m-open {
     background-position: -35px -5px; }
+    .b-icon-login.m-open:hover {
+      background-position: -5px -5px; }
 
-/* = Education icons
-================================================*/
+/* = Education icons================================================*/
 .b-icon-education {
   padding-top: 49px;
   position: relative;
@@ -715,8 +687,7 @@ p {
       padding: 0 0 0 105px;
       background-position: 36px 0; } }
 
-/* = Social icons
-================================================*/
+/* = Social icons================================================*/
 .b-icon-social {
   display: block;
   width: 47px;
@@ -759,8 +730,7 @@ p {
   .m-invert .b-icon-social.m-github:hover {
     background-position: -176px -5px; }
 
-/* = User icons
-================================================*/
+/* = User icons================================================*/
 .b-icon-user {
   background-image: url(../img/icon/user-spr.png);
   background-repeat: no-repeat; }
@@ -769,10 +739,8 @@ p {
   .b-icon-user.m-girl {
     background-position: -165px -5px; }
 
-/* = Home
-================================================*/
-/* = Variables, Media, Extends, Mixins
-================================================*/
+/* = Home================================================*/
+/* = Variables, Media, Extends, Mixins================================================*/
 /* font family: fira */
 /* font family: proxima nova */
 /* colors and default variables */
@@ -784,8 +752,7 @@ p {
   margin: 0;
   padding: 0; }
 
-/* = Home page
-================================================*/
+/* = Home page================================================*/
 /* avatar */
 .b-avatar {
   max-width: 130px;
@@ -934,16 +901,13 @@ p {
     .b-education-date {
       font: .9375em 'fira_sanslight'; } }
 
-/* = Fixes for old browsers
-================================================*/
+/* = Fixes for old browsers================================================*/
 @media (min-width: 1024px) {
   .no-borderradius .b-avatar {
     margin: 4px 40px 20px 20px; } }
 
-/* = Projects
-================================================*/
-/* = Variables, Media, Extends, Mixins
-================================================*/
+/* = Projects================================================*/
+/* = Variables, Media, Extends, Mixins================================================*/
 /* font family: fira */
 /* font family: proxima nova */
 /* colors and default variables */
@@ -955,8 +919,7 @@ p {
   margin: 0;
   padding: 0; }
 
-/* = Projects page
-================================================*/
+/* = Projects page================================================*/
 .b-project-item {
   display: block;
   text-align: center;
@@ -1085,11 +1048,7 @@ p {
 .b-project-descr {
   font: 1.0625em/1.25 'fira_sanslight';
   color: #4a545d;
-  /*display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-	@include center-pos ($width:70%);
-	overflow: hidden; */
+  /*display: -webkit-box;	-webkit-line-clamp: 2;	-webkit-box-orient: vertical;	@include center-pos ($width:70%);	overflow: hidden; */
   position: relative;
   max-width: 210px;
   margin: 0 auto;
@@ -1127,8 +1086,7 @@ p {
   color: #3ba8c0;
   white-space: nowrap; }
 
-/* = Fixes for old browsers
-================================================*/
+/* = Fixes for old browsers================================================*/
 /* transform */
 .no-csstransforms .b-project-tip {
   top: 0;
@@ -1155,10 +1113,8 @@ p {
   filter: none;
   -ms-filter: none; }
 
-/* = Forms
-================================================*/
-/* = Variables, Media, Extends, Mixins
-================================================*/
+/* = Forms================================================*/
+/* = Variables, Media, Extends, Mixins================================================*/
 /* font family: fira */
 /* font family: proxima nova */
 /* colors and default variables */
@@ -1170,8 +1126,7 @@ p {
   margin: 0;
   padding: 0; }
 
-/* = Form elements
-================================================*/
+/* = Form elements================================================*/
 /* form: title */
 .b-form-title {
   font: 1.1875em/1.25 'fira_sansbook';
@@ -1396,8 +1351,7 @@ p {
 .ie8 input[type="password"] {
   font-family: arial, sans-serif; }
 
-/* = Form buttons
-================================================*/
+/* = Form buttons================================================*/
 .b-btn-holder {
   margin: 16px 0; }
   @media (min-width: 768px) {
@@ -1463,8 +1417,7 @@ p {
     .b-btn.m-big-btn {
       padding: 8px 12px; } }
 
-/* = Form capture
-================================================*/
+/* = Form capture================================================*/
 .b-capture {
   height: 79px;
   line-height: 79px;
@@ -1475,8 +1428,15 @@ p {
   display: inline-block;
   vertical-align: middle; }
 
-/* = Form tip
-================================================*/
+.g-recaptcha {
+  margin: 0 auto;
+  width: 304px; }
+  @media (max-width: 320px) {
+    .g-recaptcha {
+      margin: 0 -20px;
+      width: 304px; } }
+
+/* = Form tip================================================*/
 .b-form-tip {
   position: absolute;
   white-space: nowrap;
@@ -1541,8 +1501,7 @@ p {
 .ie8 .b-form-tip:after {
   display: none; }
 
-/* = Form errors
-================================================*/
+/* = Form errors================================================*/
 .m-error .b-control {
   color: #959aa8;
   background: #fdd5d2;
@@ -1564,8 +1523,7 @@ p {
   transform: none;
   visibility: visible; }
 
-/* = Form messages
-================================================*/
+/* = Form messages================================================*/
 .b-form-msg {
   padding: 5px 10px 5px 5px;
   border-radius: 4px;
@@ -1593,8 +1551,7 @@ p {
     .b-form-msg-body {
       font-size: 0.9375em; } }
 
-/* = Form columns
-================================================*/
+/* = Form columns================================================*/
 @media (min-width: 768px) {
   .b-columns {
     display: table;
@@ -1632,8 +1589,7 @@ p {
     .b-columns.m-mob .m-w50 {
       width: 50%; } }
 
-/* = Contact form
-================================================*/
+/* = Contact form================================================*/
 .m-contacts-form {
   max-width: 95%;
   margin: 7px auto; }
@@ -1646,8 +1602,7 @@ p {
       max-width: 402px;
       margin: 26px auto; } }
 
-/* = Login form
-================================================*/
+/* = Login form================================================*/
 .b-login-form {
   border-radius: 2px;
   box-shadow: 0 4px 7px rgba(13, 16, 7, 0.29);
@@ -1667,16 +1622,13 @@ p {
     .b-login-form-body {
       padding: 24px 82px; } }
 
-/* = Fixes for old browsers
-================================================*/
+/* = Fixes for old browsers================================================*/
 /* opacity */
 .no-opacity .b-input-file {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
 
-/* = Popup
-================================================*/
-/* = Overlay
-================================================*/
+/* = Popup================================================*/
+/* = Overlay================================================*/
 .l-overlay {
   position: fixed;
   top: 0;
@@ -1687,8 +1639,7 @@ p {
   z-index: 1000;
   display: none; }
 
-/* = Popup
-================================================*/
+/* = Popup================================================*/
 .b-lightbox {
   z-index: 1001;
   display: none;
@@ -1747,17 +1698,14 @@ p {
     .b-lightbox-body {
       padding: 9px 20px; } }
 
-/* = Fixes for old browsers
-================================================*/
+/* = Fixes for old browsers================================================*/
 /* rgba */
 .no-rgba .l-overlay {
   background: #7e8c99;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; }
 
-/* = Animation
-================================================*/
-/* = Variables, Media, Extends, Mixins
-================================================*/
+/* = Animation================================================*/
+/* = Variables, Media, Extends, Mixins================================================*/
 /* font family: fira */
 /* font family: proxima nova */
 /* colors and default variables */
@@ -1769,8 +1717,7 @@ p {
   margin: 0;
   padding: 0; }
 
-/* = Animation
-================================================*/
+/* = Animation================================================*/
 .animation-params, .fadeOutRight, .fadeInRight {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -1826,8 +1773,7 @@ p {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0); } }
 
-/* = Fixes for old browsers
-================================================*/
+/* = Fixes for old browsers================================================*/
 .no-cssanimations .fadeInRight {
   display: block; }
 .no-cssanimations .fadeOutRight {
