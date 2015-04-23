@@ -68,7 +68,7 @@
 				<section class="b-section m-cfix">
 					<h2 class="b-form-title">У вас интересный проект? Напишите мне</h2>
 					<div class="b-form-body">
-						<form action="php/contacts.php" class="b-form m-contacts-form" method="post" enctype="multipart/form-data">
+						<form action="php/contacts.php" class="b-form m-contacts-form" method="post">
 							<div class="b-form-line b-columns">
 								<div class="b-col m-w50">
 									<div class="b-form-label">Имя</div>

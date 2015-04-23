@@ -59,7 +59,7 @@
 			<!-- Login form: start -->
 			<div class="b-login-form">
 				<h2 class="b-form-title m-big-font">Авторизуйтесь</h2>
-				<form action="php/auth.php" class="b-form b-form-body b-login-form-body" method="post" enctype="multipart/form-data">
+				<form action="php/auth.php" class="b-form b-form-body b-login-form-body" method="post">
 					<div class="b-form-line m-spaced">
 						<div class="b-form-label m-big-label m-center">Логин</div>
 						<div class="b-form-field">
