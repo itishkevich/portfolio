@@ -56,7 +56,6 @@
 	<div class="h-base-container">
 		<!-- Header: start -->
 		<?php
-			$page = 'index';
 			include 'includes/header.php';
 		?>
 		<!-- Header: end -->

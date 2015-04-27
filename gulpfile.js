@@ -13,10 +13,9 @@ var gulp = require('gulp'),
 gulp.task('connect', function () {
 	connect.server({
 		root: 'app',
-		livereload: true,
-		port: 8888
+		livereload: true
 	});
-	open('http://localhost:8888');
+	open('http://itishkevich.local/');
 });
 
 // php
@@ -55,10 +54,10 @@ gulp.task('js', function () {
 
 // watcher
 gulp.task('watch', function () {
-	gulp.watch(['./app/*.php'], ['php','build']);
+	gulp.watch(['./app/*.php'], ['php']);
 	gulp.watch(['./app/scss/*.scss'], ['sass']);
-	gulp.watch(['./app/css/*.css'], ['css','build']);
-	gulp.watch(['./app/js/*.js'], ['js','build']);
+	gulp.watch(['./app/css/*.css'], ['css']);
+	gulp.watch(['./app/js/*.js'], ['js']);
 });
 
 // default task
@@ -73,6 +72,7 @@ var path = {
 		css: './dist/css/',
 		js: './dist/js/',
 		jsvendor: './dist/js/vendor/',
+		includes: './dist/includes/',
 		img: './dist/img/',
 		fonts: './dist/fonts/'
 	},
@@ -82,6 +82,7 @@ var path = {
 		css: './app/css/**/*.css',
 		js: './app/js/vendor/*',
 		uglifyjs: './app/js/*.js',
+		includes: './app/includes/*.php',
 		img: './app/img/**/*.*',
 		fonts: './app/fonts/**/*.*'
 	},
@@ -89,6 +90,7 @@ var path = {
 		php: './app/**/*.php',
 		css: './app/css/**/*.css',
 		js: './app/js/**/*.js',
+		includes: './app/includes/*.php',
 		img: './app/img/**/*.*',
 		fonts: './app/fonts/**/*.*'
 	},
@@ -98,6 +100,8 @@ var path = {
 gulp.task('php:build', function () {
 	gulp.src(path.src.phpsrc)
 		.pipe(gulp.dest(path.build.phpsrc));
+	gulp.src(path.src.includes)
+		.pipe(gulp.dest(path.build.includes));
 	gulp.src(path.src.php)
 		.pipe(minifyHTML({
 			empty:true,

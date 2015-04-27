@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$page = 'projects';
+	include 'php/db_projects.php';
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js ie ie8" lang="ru"> <![endif]-->
@@ -53,7 +54,7 @@
 	<![endif]-->
 
 	<!-- Overlay: start -->
-		<div class="l-overlay"></div>
+	<div class="l-overlay"></div>
 	<!-- Overlay: end -->
 
 	<!-- Lighbox add project: start -->
@@ -68,7 +69,7 @@
 					<div class="b-form-label m-small-label">Название проекта</div>
 					<div class="b-form-field">
 						<span class="b-form-tip">Введите название</span>
-						<input class="b-control b-input required" type="text" name="name" placeholder="Введите название"/>
+						<input class="b-control b-input required" type="text" name="name" placeholder="Введите название" />
 					</div>
 				</div>
 				<div class="b-form-line m-reduced">
@@ -76,7 +77,7 @@
 					<div class="b-form-field">
 						<span class="b-form-tip">Изображение</span>
 						<div class="b-custom-upload">
-							<input class="b-control b-input b-input-file" type="file" name="upload" id="upload"/>
+							<input class="b-control b-input b-input-file" type="file" name="upload" id="upload" />
 							<div class="b-fake-upload">
 								<div class="b-icon-upload"></div>
 								<input class="b-control b-input required b-fake-input" type="text" readonly placeholder="Загрузите изображение" />
@@ -99,7 +100,7 @@
 					</div>
 				</div>
 				<div class="b-btn-holder m-reduced m-center">
-					<input type="submit" class="b-btn" value="Добавить"/>
+					<input type="submit" class="b-btn" value="Добавить" />
 				</div>
 			</form>
 		</div>
@@ -122,62 +123,22 @@
 					<h2 class="b-section-title">Мои работы</h2>
 					<div class="b-section-body">
 						<ul class="b-project-list m-cfix">
-							<li class="b-project-item">
-								<div class="b-project-img-container">
-									<img class="b-project-img" src="img/misc/project-thumb1.jpg" alt="project 1">
-									<div class="b-project-tip">
-										<div class="b-project-tip-text">название</div>
+							<? while($row = mysql_fetch_array($result)) { ?>
+								<li class="b-project-item">
+									<div class="b-project-img-container">
+										<img class="b-project-img" src="<?=$row['img_path']?>" alt="<?=$row['site_name']?>" />
+										<div class="b-project-tip">
+											<div class="b-project-tip-text"><?=$row['site_name']?></div>
+										</div>
 									</div>
-								</div>
-								<div class="b-project-title">
-									<a class="b-project-link" href="http://www.site.ru" target="_blank">www.site.ru</a>
-								</div>
-								<div class="b-project-descr">
-									Информация о проекте 1 превью 2 строки
-								</div>
-							</li>
-							<li class="b-project-item">
-								<div class="b-project-img-container">
-									<img class="b-project-img" src="img/misc/project-thumb2.jpg" alt="project 2">
-									<div class="b-project-tip">
-										<div class="b-project-tip-text">название</div>
+									<div class="b-project-title">
+										<a class="b-project-link" href="<?=$row['site_link']?>" target="_blank"><?=$row['site_link_text']?></a>
 									</div>
-								</div>
-								<div class="b-project-title">
-									<a class="b-project-link" href="http://www.site.ru" target="_blank">www.site.ru</a>
-								</div>
-								<div class="b-project-descr">
-									Информация о проекте 2 превью 2 строки
-								</div>
-							</li>
-							<li class="b-project-item">
-								<div class="b-project-img-container">
-									<img class="b-project-img" src="img/misc/project-thumb3.jpg" alt="project 3">
-									<div class="b-project-tip">
-										<div class="b-project-tip-text">название</div>
+									<div class="b-project-descr">
+										<?=$row['site_descr']?>
 									</div>
-								</div>
-								<div class="b-project-title">
-									<a class="b-project-link" href="http://www.site.ru" target="_blank">www.site.ru</a>
-								</div>
-								<div class="b-project-descr">
-									Информация о проекте 3 превью 2 строки
-								</div>
-							</li>
-							<li class="b-project-item">
-								<div class="b-project-img-container">
-									<img class="b-project-img" src="img/misc/project-thumb4.jpg" alt="project 4">
-									<div class="b-project-tip">
-										<div class="b-project-tip-text">название</div>
-									</div>
-								</div>
-								<div class="b-project-title">
-									<a class="b-project-link" href="http://www.site.ru" target="_blank">www.site.ru</a>
-								</div>
-								<div class="b-project-descr">
-									Информация о проекте 4 превью 2 строки
-								</div>
-							</li>
+								</li>
+							<? } ?>
 							<?php if (isset($_SESSION['auth'])) : ?>
 								<li class="b-project-item js-add-project">
 									<div class="b-project-img-container m-dashed b-project-add">

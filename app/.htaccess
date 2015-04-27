@@ -1,1 +1,1 @@
-Options -Indexes
+###Options -IndexesDirectoryIndex index.phpRewriteEngine On# hide .phpRewriteRule ^(\w+)$ $1.php [NC]# redirect from wwwRewriteCond %{HTTP_HOST} ^www.itishkevich.ru$ [NC]RewriteRule ^(.*)$ http://itishkevich.ru/$1 [R=301,L]

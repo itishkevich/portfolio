@@ -1,0 +1,1 @@
+<?php	require_once 'db_connect.php';	// SQL query	$query = 'SELECT * FROM tbl_projects';	// SQL query data set	$result = mysql_query($query);	// Close connect	mysql_close();
