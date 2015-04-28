@@ -54,10 +54,10 @@ gulp.task('js', function () {
 
 // watcher
 gulp.task('watch', function () {
-	gulp.watch(['./app/*.php'], ['php']);
+	gulp.watch(['./app/*.php'], ['php','build']);
 	gulp.watch(['./app/scss/*.scss'], ['sass']);
-	gulp.watch(['./app/css/*.css'], ['css']);
-	gulp.watch(['./app/js/*.js'], ['js']);
+	gulp.watch(['./app/css/*.css'], ['css','build']);
+	gulp.watch(['./app/js/*.js'], ['js','build']);
 });
 
 // default task
